@@ -4,12 +4,16 @@ import React from 'react';
 const ServiceDetailPage = async({params}) => {
   const {id} =  await(params)
   const singleData = services.find((item)=>item._id === id)
+  if(singleData){
     return (
         <div>
             <h1>Service Details</h1>
-            <p>{singleData.service_name}</p>
+            <p>{singleData?.service_name}</p>
         </div>
-    );
+    );}
+    else{
+        return <>Not Found</>
+    }
 };
 
 export default ServiceDetailPage;
