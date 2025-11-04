@@ -42,12 +42,12 @@ export default async function MealsPage({ searchParams }) {
         {meals?.map((singleMeal) => {
           return (
             <div key={singleMeal?.idMeal} className={roboto.className}>
-              {/* <Image
+              <Image
                 src={singleMeal?.strMealThumb}
                 width={641}
                 height={641}
                 alt={singleMeal?.strMeal}
-              /> */}
+              />
               <p className="text-2xl font-bold">{singleMeal?.strMeal}</p>
               <p>{singleMeal?.strInstructions}</p>
               <Link href={`/meals/${singleMeal.idMeal}`}>Details</Link>
