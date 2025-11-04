@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 // This function can be marked `async` if using `await` inside
 export function proxy(request) {
     const currentCookie = request.cookies.get("nextjs-token")
-    console.log(currentCookie);
+    // console.log(currentCookie);
     const dummyUserData = {
         role: "client",
         email: "test@admin.com"

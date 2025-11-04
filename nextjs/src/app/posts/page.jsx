@@ -1,0 +1,26 @@
+import Link from "next/link";
+import style from './post.module.css'
+
+export const getPosts  = async() =>{
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts")
+    const data = await res.json();
+    return data
+}
+
+const Posts = async() => {
+    const posts = await getPosts();
+    return (
+        <div>
+            {
+                posts.map((post)=>(
+                    <div key={post.id}>
+                        <Link className="test-purpose" href={`/posts/${post.id}`}>{post.title}</Link>
+                        <Link className={`${style["post-title"]}`} href={`/posts/${post.id}`}>{post.title}</Link>
+                    </div>
+                ))
+            }
+        </div>
+    );
+};
+
+export default Posts;
